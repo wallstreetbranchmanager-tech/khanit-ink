@@ -2,17 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { logo } from "@/lib/logo";
-
-const gallery = [
-  { src: "/work/veil-rose-skull.jpg", title: "Veil, Rose & Skull", tag: "Black & grey · forearm" },
-  { src: "/work/black-snake.jpg", title: "Scale Snake", tag: "Blackwork · inner arm" },
-  { src: "/work/oni-sleeve.jpg", title: "Oni Sleeve (line)", tag: "Japanese · upper arm" },
-  { src: "/work/candle.jpg", title: "Melting Candle", tag: "Blackwork · arm" },
-  { src: "/work/sun-spiral.jpg", title: "Spiral Sun", tag: "Bold line · elbow" },
-  { src: "/work/sakura-leg.jpg", title: "Sakura Current", tag: "Fine line · lower leg" },
-  { src: "/work/red-ink-butterflies.jpg", title: "Red Ink Flight", tag: "Red fine-line" },
-  { src: "/work/studio-session.jpg", title: "In the chair", tag: "Studio · Udon Thani" },
-];
+import { works as gallery } from "@/lib/work";
 
 export default function Home() {
   return (
@@ -20,17 +10,11 @@ export default function Home() {
       <Nav />
       <main>
         <section className="relative min-h-[100svh] grain overflow-hidden bg-black">
-          <img
-            src={logo}
-            alt="KHANIT INK — Udon Thani"
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/35 to-ink" />
+          <img src={logo} alt="KHANIT INK — Udon Thani" className="absolute inset-0 h-full w-full object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-ink" />
           <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28">
-            <p className="mb-4 text-[11px] uppercase tracking-[0.45em] text-gold">
-              Udon Thani · Appointment only · @khanitink
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <p className="mb-4 text-[11px] uppercase tracking-[0.45em] text-gold">Udon Thani · Appointment only · @khanitink</p>
+            <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/book" className="bg-gold px-8 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-ink hover:bg-goldsoft">Book a session</Link>
               <Link href="/#work" className="border border-white/30 px-8 py-3 text-xs uppercase tracking-[0.24em] text-white/80 hover:border-gold hover:text-gold">See the work</Link>
             </div>
@@ -47,7 +31,7 @@ export default function Home() {
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((p) => (
-              <figure key={p.src} className="group overflow-hidden border border-white/10 bg-black">
+              <figure key={p.title} className="group overflow-hidden border border-white/10 bg-black">
                 <div className="aspect-[3/4] overflow-hidden">
                   <img src={p.src} alt={p.title} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
                 </div>
@@ -61,7 +45,7 @@ export default function Home() {
         </section>
         <section id="studio" className="border-y border-white/10 bg-black/40">
           <div className="mx-auto grid max-w-6xl items-center gap-0 lg:grid-cols-2">
-            <img src="/logo.jpg" alt="KHANIT INK lockup" className="h-full max-h-[720px] w-full object-cover" />
+            <img src={logo} alt="KHANIT INK lockup" className="h-full max-h-[720px] w-full object-cover" />
             <div className="px-6 py-16 lg:px-14">
               <p className="text-[11px] uppercase tracking-[0.4em] text-gold">The studio</p>
               <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">One chair.<br />No noise.</h2>
