@@ -1,19 +1,21 @@
-import type { Metadata } from "next";
+"use client";
+
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { works as gallery } from "@/lib/work";
-
-export const metadata: Metadata = { title: "Gallery" };
+import { t } from "@/lib/i18n";
+import { useLang } from "@/components/LangProvider";
 
 export default function GalleryPage() {
+  const { lang } = useLang();
   return (
     <>
       <Nav />
       <main className="pt-24">
         <section className="mx-auto max-w-6xl px-5 py-16">
-          <p className="text-[11px] uppercase tracking-[0.4em] text-gold">Portfolio</p>
-          <h1 className="mt-2 font-display text-5xl tracking-[0.12em]">Gallery</h1>
-          <p className="mt-4 max-w-xl font-body text-xl text-white/60">Fresh work from the chair. Line passes and healed pieces.</p>
+          <p className="text-[11px] uppercase tracking-[0.4em] text-gold">{t.portfolio[lang]}</p>
+          <h1 className="mt-2 font-display text-5xl tracking-[0.12em]">{t.navGallery[lang]}</h1>
+          <p className="mt-4 max-w-xl font-body text-xl text-white/60">{t.galleryLead[lang]}</p>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((p) => (
               <figure key={p.src} className="plate overflow-hidden">
