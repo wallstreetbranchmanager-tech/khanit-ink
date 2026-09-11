@@ -1,13 +1,12 @@
-# Khanit Ink
+# KHANIT INK
 
-Luxury Tattoo Studio Management System
+Private tattoo studio site — Udon Thani, Thailand.
 
-## Features
-- Artist booking calendar
-- Photo inventory & gallery
-- Global payments
-- Voice booking (Twilio ready)
-- Auto supply reordering
-- International accounting
+Next.js 14 + Tailwind. Deployed on Vercel.
 
-Built for Paul & Khanit ❤️
+```
+npm i
+npm run dev
+```
+
+Built for Paul & Khanit.
