@@ -10,6 +10,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-6 text-xs uppercase tracking-[0.2em] text-white/50">
           <Link href="/gallery" className="hover:text-gold">Gallery</Link>
+          <Link href="/aftercare" className="hover:text-gold">Aftercare</Link>
           <Link href="/book" className="hover:text-gold">Book a session</Link>
         </div>
       </div>
