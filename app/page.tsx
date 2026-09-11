@@ -1,40 +1,102 @@
-import Link from 'next/link';
-import { Calendar, Users, Image, CreditCard, Package } from 'lucide-react';
+import Link from "next/link";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+const gallery = [
+  { src: "/work/veil-rose-skull.jpg", title: "Veil, Rose & Skull", tag: "Black & grey · forearm" },
+  { src: "/work/black-snake.jpg", title: "Scale Snake", tag: "Blackwork · inner arm" },
+  { src: "/work/oni-sleeve.jpg", title: "Oni Sleeve (line)", tag: "Japanese · upper arm" },
+  { src: "/work/candle.jpg", title: "Melting Candle", tag: "Blackwork · arm" },
+  { src: "/work/sun-spiral.jpg", title: "Spiral Sun", tag: "Bold line · elbow" },
+  { src: "/work/sakura-leg.jpg", title: "Sakura Current", tag: "Fine line · lower leg" },
+  { src: "/work/red-ink-butterflies.jpg", title: "Red Ink Flight", tag: "Red fine-line" },
+  { src: "/work/studio-session.jpg", title: "In the chair", tag: "Studio · Udon Thani" },
+];
+const veil_rose_skull = "/work/veil-rose-skull.jpg";
+const studio_session = "/work/studio-session.jpg";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-950">
-      {/* Hero */}
-      <header className="relative h-screen flex items-center justify-center bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover">
-        <div className="absolute inset-0 bg-black/70"></div>
-        <div className="relative z-10 text-center px-6">
-          <h1 className="text-7xl font-bold tracking-tight mb-4">KHANIT INK</h1>
-          <p className="text-2xl text-amber-400 mb-8">Luxury Tattoo Studio • Udon Thani</p>
-          <Link href="/book" className="inline-block bg-amber-500 hover:bg-amber-600 text-black font-semibold px-10 py-4 rounded-full text-lg transition">
-            Book Your Session
-          </Link>
-        </div>
-      </header>
-
-      <main className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-zinc-900 p-8 rounded-3xl">
-            <Image className="w-12 h-12 mb-6 text-amber-400" />
-            <h3 className="text-2xl font-semibold mb-3">Design Gallery</h3>
-            <p className="text-zinc-400">Browse thousands of exclusive designs and artist portfolios.</p>
+    <>
+      <Nav />
+      <main>
+        <section className="relative min-h-[100svh] grain overflow-hidden">
+          <img src={veil_rose_skull} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/70 to-ink" />
+          <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28">
+            <p className="mb-4 text-[11px] uppercase tracking-[0.45em] text-gold">Udon Thani · Appointment only</p>
+            <h1 className="font-display text-5xl leading-none tracking-[0.12em] text-goldsoft sm:text-7xl md:text-8xl">KHANIT<br />INK</h1>
+            <p className="mt-6 max-w-xl font-body text-2xl italic text-white/75 sm:text-3xl">Custom work that sits on skin like it was always supposed to be there.</p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link href="/book" className="bg-gold px-8 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-ink hover:bg-goldsoft">Book a session</Link>
+              <Link href="/#work" className="border border-white/30 px-8 py-3 text-xs uppercase tracking-[0.24em] text-white/80 hover:border-gold hover:text-gold">See the work</Link>
+            </div>
           </div>
-          <div className="bg-zinc-900 p-8 rounded-3xl">
-            <Users className="w-12 h-12 mb-6 text-amber-400" />
-            <h3 className="text-2xl font-semibold mb-3">5 Master Artists</h3>
-            <p className="text-zinc-400">Book with Khanit and team. Different specialties & rates.</p>
+        </section>
+        <div className="gold-line" />
+        <section id="work" className="mx-auto max-w-6xl px-5 py-24">
+          <div className="mb-12 flex items-end justify-between gap-6">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.4em] text-gold">Latest</p>
+              <h2 className="mt-2 font-display text-4xl tracking-[0.12em]">The work</h2>
+            </div>
+            <Link href="/gallery" className="text-xs uppercase tracking-[0.22em] text-gold hover:underline">Full gallery →</Link>
           </div>
-          <div className="bg-zinc-900 p-8 rounded-3xl">
-            <Package className="w-12 h-12 mb-6 text-amber-400" />
-            <h3 className="text-2xl font-semibold mb-3">Premium Supplies</h3>
-            <p className="text-zinc-400">Auto-reorder system for top quality inks & needles.</p>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map((p) => (
+              <figure key={p.src} className="group overflow-hidden border border-white/10 bg-black">
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img src={p.src} alt={p.title} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                </div>
+                <figcaption className="px-4 py-4">
+                  <p className="font-display text-sm tracking-[0.16em]">{p.title}</p>
+                  <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-white/45">{p.tag}</p>
+                </figcaption>
+              </figure>
+            ))}
           </div>
-        </div>
+        </section>
+        <section id="studio" className="border-y border-white/10 bg-black/40">
+          <div className="mx-auto grid max-w-6xl items-center gap-0 lg:grid-cols-2">
+            <img src={studio_session} alt="Khanit tattooing in the Udon Thani studio" className="h-full max-h-[720px] w-full object-cover" />
+            <div className="px-6 py-16 lg:px-14">
+              <p className="text-[11px] uppercase tracking-[0.4em] text-gold">The studio</p>
+              <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">One chair.<br />No noise.</h2>
+              <p className="mt-6 font-body text-xl leading-relaxed text-white/70">Khanit Ink is a private room in Udon Thani — not a tourist mill. Gloves on, stencil tight, machine steady.</p>
+              <ul className="mt-8 space-y-3 text-sm text-white/60">
+                <li>— Black & grey realism and ornamental</li>
+                <li>— Japanese / oni / sleeve linework</li>
+                <li>— Fine-line florals and red ink</li>
+                <li>— Cover-ups and custom from reference</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section className="mx-auto max-w-6xl px-5 py-24">
+          <p className="text-[11px] uppercase tracking-[0.4em] text-gold">How it works</p>
+          <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">Three steps</h2>
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {[
+              { n: "01", t: "Send the idea", d: "Placement, size, references. Quote before the needle." },
+              { n: "02", t: "Stencil & sit", d: "Eat first. Session length is locked before we start." },
+              { n: "03", t: "Heal it right", d: "Aftercare is not optional. Ask about the touch-up window." },
+            ].map((s) => (
+              <div key={s.n} className="border border-white/10 p-7">
+                <p className="font-display text-gold">{s.n}</p>
+                <h3 className="mt-4 font-display text-xl tracking-[0.12em]">{s.t}</h3>
+                <p className="mt-3 font-body text-lg text-white/60">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="px-5 pb-24">
+          <div className="mx-auto max-w-6xl border border-gold/30 bg-gradient-to-br from-gold/10 to-transparent px-8 py-16 text-center">
+            <p className="font-display text-3xl tracking-[0.16em] text-goldsoft sm:text-5xl">Skin is the last canvas that does not lie.</p>
+            <p className="mx-auto mt-5 max-w-lg font-body text-xl text-white/60">Udon Thani. By appointment. Bring the story. Leave with it on you.</p>
+            <Link href="/book" className="mt-8 inline-block bg-gold px-10 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-ink hover:bg-goldsoft">Request a chair</Link>
+          </div>
+        </section>
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
