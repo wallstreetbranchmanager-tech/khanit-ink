@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { works as gallery, ADDRESS_EN, ADDRESS_TH, MAPS_Q } from "@/lib/work";
+import { works as gallery } from "@/lib/work";
+import StudioMap from "@/components/StudioMap";
 
 export default function Home() {
   return (
@@ -48,24 +49,14 @@ export default function Home() {
             <div className="px-6 py-16 lg:px-14">
               <p className="text-[11px] uppercase tracking-[0.4em] text-gold">The studio</p>
               <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">One chair.<br />No noise.</h2>
-              <p className="mt-6 font-body text-xl leading-relaxed text-white/70">Private room in Ban Muang, Ban Dung. Same road as the stall. Japanese demons, black snakes, red-ink botanicals.</p>
+              <p className="mt-6 font-body text-xl leading-relaxed text-white/70">Private room in Ban Muang, Ban Dung. Same road as the stall.</p>
             </div>
           </div>
         </section>
-        <section className="mx-auto max-w-6xl px-5 pb-16">
-          <p className="text-[11px] uppercase tracking-[0.4em] text-gold">The stall</p>
-          <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">บ้านม่วง บ้านดุง</h2>
-          <p className="mt-4 font-body text-xl text-white/70">{ADDRESS_TH}</p>
-          <p className="text-sm text-white/45">{ADDRESS_EN}</p>
-          <div className="mt-8 overflow-hidden border border-gold/20">
-            <iframe title="Khanit Ink Ban Dung" className="h-80 w-full" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src={`https://maps.google.com/maps?q=${MAPS_Q}&hl=th&z=15&output=embed`} />
-          </div>
-          <p className="mt-3"><a className="text-sm text-gold" href={`https://maps.google.com/?q=${MAPS_Q}`} target="_blank" rel="noopener">Google Maps</a></p>
-        </section>
+        <StudioMap />
         <section className="px-5 pb-24">
           <div className="mx-auto max-w-6xl border border-gold/30 bg-gradient-to-br from-gold/10 to-transparent px-8 py-16 text-center">
             <p className="font-display text-3xl tracking-[0.16em] text-goldsoft sm:text-5xl">Skin is the last canvas that does not lie.</p>
-            <p className="mx-auto mt-5 max-w-lg font-body text-xl text-white/60">Ban Dung. By appointment.</p>
             <Link href="/book" className="mt-8 inline-block bg-gold px-10 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-ink hover:bg-goldsoft">Request a chair</Link>
           </div>
         </section>
