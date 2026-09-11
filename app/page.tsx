@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import StudioMap from "@/components/StudioMap";
 import { works as gallery, LOGO } from "@/lib/work";
+import HeroCopy from "@/components/HeroCopy";
 
 export default function Home() {
   return (
@@ -13,13 +14,7 @@ export default function Home() {
           <img src={LOGO} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-ink" />
           <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28">
-            <p className="text-[11px] uppercase tracking-[0.45em] text-gold">Ban Dung · Appointment only</p>
-            <h1 className="mt-4 max-w-3xl font-display text-5xl leading-[1.05] tracking-[0.12em] text-goldsoft sm:text-7xl">KHANIT<br />INK</h1>
-            <p className="mt-6 max-w-lg font-body text-xl leading-relaxed text-white/75 sm:text-2xl">One chair. Custom Japanese, blackwork, and fine-line — drawn for the body in front of you.</p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/book" className="btn-gold px-8 py-3 text-xs font-semibold uppercase tracking-[0.24em]">Book a session</Link>
-              <Link href="/#work" className="border border-white/30 px-8 py-3 text-xs uppercase tracking-[0.24em] text-white/80 hover:border-gold hover:text-gold">See the work</Link>
-            </div>
+            <HeroCopy />
           </div>
         </section>
         <div className="gold-line" />
@@ -51,28 +46,10 @@ export default function Home() {
             <div className="px-6 py-16 lg:px-14">
               <p className="text-[11px] uppercase tracking-[0.4em] text-gold">The studio</p>
               <h2 className="mt-3 font-display text-4xl tracking-[0.1em] sm:text-5xl">One chair.<br />No noise.</h2>
-              <p className="mt-6 font-body text-xl leading-relaxed text-white/70">Private room in Ban Muang, Ban Dung — same road as the stall. Quote before the needle. Cash or PromptPay on the day.</p>
             </div>
           </div>
         </section>
-        <section className="mx-auto max-w-6xl px-5 py-24">
-          <p className="text-[11px] uppercase tracking-[0.4em] text-gold">How it works</p>
-          <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">Three steps</h2>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {[
-              { n: "01", t: "Send the idea", d: "Placement, size, references. Quote before the needle." },
-              { n: "02", t: "Stencil & sit", d: "Eat first. Session length is locked. Deposit holds the chair." },
-              { n: "03", t: "Heal it right", d: "Aftercare is not optional. Ask about the touch-up window." },
-            ].map((s) => (
-              <div key={s.n} className="border border-white/10 p-7">
-                <p className="font-display text-gold">{s.n}</p>
-                <h3 className="mt-4 font-display text-xl tracking-[0.12em]">{s.t}</h3>
-                <p className="mt-3 font-body text-lg text-white/60">{s.d}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section id="aftercare" className="mx-auto max-w-6xl px-5 pb-8">
+        <section id="aftercare" className="mx-auto max-w-6xl px-5 py-24">
           <p className="text-[11px] uppercase tracking-[0.4em] text-gold">Aftercare</p>
           <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">Keep the ink</h2>
           <div className="mt-10 grid items-center gap-10 lg:grid-cols-2">
