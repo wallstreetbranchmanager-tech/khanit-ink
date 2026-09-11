@@ -1,18 +1,19 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { plates } from "@/lib/plates";
 const gallery = [
-  { src: "/work/veil-rose-skull.jpg", title: "Veil, Rose & Skull", tag: "Black & grey · forearm" },
-  { src: "/work/black-snake.jpg", title: "Scale Snake", tag: "Blackwork · inner arm" },
-  { src: "/work/oni-sleeve.jpg", title: "Oni Sleeve (line)", tag: "Japanese · upper arm" },
-  { src: "/work/candle.jpg", title: "Melting Candle", tag: "Blackwork · arm" },
-  { src: "/work/sun-spiral.jpg", title: "Spiral Sun", tag: "Bold line · elbow" },
-  { src: "/work/sakura-leg.jpg", title: "Sakura Current", tag: "Fine line · lower leg" },
-  { src: "/work/red-ink-butterflies.jpg", title: "Red Ink Flight", tag: "Red fine-line" },
-  { src: "/work/studio-session.jpg", title: "In the chair", tag: "Studio · Udon Thani" },
+  { src: plates.veil_rose_skull, title: "Veil, Rose & Skull", tag: "Black & grey · forearm" },
+  { src: plates.black_snake, title: "Scale Snake", tag: "Blackwork · inner arm" },
+  { src: plates.oni_sleeve, title: "Oni Sleeve (line)", tag: "Japanese · upper arm" },
+  { src: plates.candle, title: "Melting Candle", tag: "Blackwork · arm" },
+  { src: plates.sun_spiral, title: "Spiral Sun", tag: "Bold line · elbow" },
+  { src: plates.sakura_leg, title: "Sakura Current", tag: "Fine line · lower leg" },
+  { src: plates.red_ink_butterflies, title: "Red Ink Flight", tag: "Red fine-line" },
+  { src: plates.studio_session, title: "In the chair", tag: "Studio · Udon Thani" },
 ];
-const veil_rose_skull = "/work/veil-rose-skull.jpg";
-const studio_session = "/work/studio-session.jpg";
+const veil_rose_skull = plates.veil_rose_skull;
+const studio_session = plates.studio_session;
 
 export default function Home() {
   return (
@@ -43,7 +44,7 @@ export default function Home() {
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((p) => (
-              <figure key={p.src} className="group overflow-hidden border border-white/10 bg-black">
+              <figure key={p.title} className="group overflow-hidden border border-white/10 bg-black">
                 <div className="aspect-[3/4] overflow-hidden">
                   <img src={p.src} alt={p.title} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
                 </div>
