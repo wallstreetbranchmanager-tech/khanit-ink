@@ -1,3 +1,4 @@
-import { works as a } from "./works-a";
-import { works as b } from "./works-b";
-export const works = [...a, ...b] as const;
+import { item as veil } from "./p_veil";
+import { item as oni } from "./p_oni";
+import { item as sakura } from "./p_sakura";
+export const works = [veil, oni, sakura] as const;
