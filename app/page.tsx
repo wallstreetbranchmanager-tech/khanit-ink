@@ -53,6 +53,22 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section id="aftercare" className="mx-auto max-w-6xl px-5 py-24">
+          <p className="text-[11px] uppercase tracking-[0.4em] text-gold">Aftercare</p>
+          <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">Keep the ink</h2>
+          <div className="mt-10 grid items-center gap-10 lg:grid-cols-2">
+            <img src="/api/asset?p=aftercare.jpg" alt="Khanit Ink aftercare guide" className="w-full border border-gold/20 object-cover" />
+            <div>
+              <ol className="space-y-4 font-body text-lg text-white/70">
+                <li>1. Remove the bandage after 2–4 hours.</li>
+                <li>2. Wash with warm water and mild soap.</li>
+                <li>3. Pat dry. Thin balm 2–3 times a day.</li>
+                <li>4. No sun, no swim, no soak, no scratch.</li>
+              </ol>
+              <Link href="/aftercare" className="mt-8 inline-block border border-gold/60 px-8 py-3 text-xs uppercase tracking-[0.24em] text-gold hover:bg-gold hover:text-ink">Full aftercare guide</Link>
+            </div>
+          </div>
+        </section>
         <StudioMap />
         <section className="px-5 pb-24">
           <div className="mx-auto max-w-6xl border border-gold/30 bg-gradient-to-br from-gold/10 to-transparent px-8 py-16 text-center">
