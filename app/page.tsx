@@ -14,20 +14,19 @@ export default function Home() {
     <>
       <Nav />
       <main>
-        <section className="relative min-h-[100svh] grain overflow-hidden bg-black">
-          <img src={LOGO} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/45 to-ink" />
-          <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28">
-            <p className="text-[11px] uppercase tracking-[0.45em] text-gold">{t.eyebrow[lang]}</p>
-            <h1 className="mt-4 max-w-3xl font-display text-5xl leading-[1.05] tracking-[0.12em] text-goldsoft sm:text-7xl">KHANIT<br />INK</h1>
-            <p className="mt-6 max-w-lg font-body text-xl leading-relaxed text-white/75 sm:text-2xl">{t.hero[lang]}</p>
-            <div className="mt-10 flex flex-wrap gap-4">
+        <section className="relative min-h-[100svh] overflow-hidden bg-black">
+          <h1 className="sr-only">KHANIT INK</h1>
+          <img src={LOGO} alt="Khanit Ink koi logo" className="absolute inset-0 h-full w-full object-cover object-center" />
+        </section>
+        <section className="border-y border-white/10 bg-black px-5 py-6">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4">
+            <p className="text-[11px] uppercase tracking-[0.35em] text-gold">{t.eyebrow[lang]}</p>
+            <div className="flex flex-wrap gap-3">
               <Link href="/book" className="btn-gold px-8 py-3 text-xs font-semibold uppercase tracking-[0.24em]">{t.book[lang]}</Link>
               <Link href="/#work" className="border border-white/30 px-8 py-3 text-xs uppercase tracking-[0.24em] text-white/80 hover:border-gold hover:text-gold">{t.seeWork[lang]}</Link>
             </div>
           </div>
         </section>
-        <div className="gold-line" />
         <section id="work" className="mx-auto max-w-6xl px-5 py-24">
           <div className="mb-12 flex items-end justify-between gap-6">
             <div>
@@ -37,7 +36,7 @@ export default function Home() {
             <Link href="/gallery" className="text-xs uppercase tracking-[0.22em] text-gold hover:underline">{t.fullGallery[lang]}</Link>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {gallery.slice(0, 6).map((p) => (
+            {gallery.filter((p) => !p.src.includes("sun-spiral")).slice(0, 6).map((p) => (
               <figure key={p.src} className="plate group overflow-hidden">
                 <div className="aspect-[3/4] overflow-hidden">
                   <img src={p.src} alt={p.title} className="h-full w-full object-cover" />
@@ -60,24 +59,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="mx-auto max-w-6xl px-5 py-24">
-          <p className="text-[11px] uppercase tracking-[0.4em] text-gold">{t.how[lang]}</p>
-          <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">{t.three[lang]}</h2>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {[
-              { n: "01", t: t.s1t[lang], d: t.s1d[lang] },
-              { n: "02", t: t.s2t[lang], d: t.s2d[lang] },
-              { n: "03", t: t.s3t[lang], d: t.s3d[lang] },
-            ].map((s) => (
-              <div key={s.n} className="border border-white/10 p-7">
-                <p className="font-display text-gold">{s.n}</p>
-                <h3 className="mt-4 font-display text-xl tracking-[0.12em]">{s.t}</h3>
-                <p className="mt-3 font-body text-lg text-white/60">{s.d}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section id="aftercare" className="mx-auto max-w-6xl px-5 pb-8">
+        <section id="aftercare" className="mx-auto max-w-6xl px-5 py-24">
           <p className="text-[11px] uppercase tracking-[0.4em] text-gold">{t.navAftercare[lang]}</p>
           <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">{t.afterH[lang]}</h2>
           <div className="mt-10 grid items-center gap-10 lg:grid-cols-2">
