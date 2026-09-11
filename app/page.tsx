@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { works as gallery } from "@/lib/work";
+import { works as gallery, LOGO } from "@/lib/work";
 import StudioMap from "@/components/StudioMap";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Nav />
       <main>
         <section className="relative min-h-[100svh] grain overflow-hidden bg-black">
-          <img src="/assets/logo.jpg" alt="KHANIT INK — Ban Dung" className="absolute inset-0 h-full w-full object-cover object-center" />
+          <img src={LOGO} alt="KHANIT INK — Ban Dung" className="absolute inset-0 h-full w-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-ink" />
           <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28">
             <p className="mb-4 text-[11px] uppercase tracking-[0.45em] text-gold">Ban Dung · Appointment only · @khanitink</p>
@@ -45,7 +45,7 @@ export default function Home() {
         </section>
         <section id="studio" className="border-y border-white/10 bg-black/40">
           <div className="mx-auto grid max-w-6xl items-center gap-0 lg:grid-cols-2">
-            <img src="/assets/work/studio-session.jpg" alt="Khanit tattooing in Ban Dung" className="h-full max-h-[720px] w-full object-cover" />
+            <img src="/api/asset?p=work/studio-session.jpg" alt="Khanit tattooing in Ban Dung" className="h-full max-h-[720px] w-full object-cover" />
             <div className="px-6 py-16 lg:px-14">
               <p className="text-[11px] uppercase tracking-[0.4em] text-gold">The studio</p>
               <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">One chair.<br />No noise.</h2>
