@@ -14,9 +14,9 @@ export default function Home() {
     <>
       <Nav />
       <main>
-        <section className="relative min-h-[100svh] overflow-hidden bg-black">
+        <section className="relative bg-black pt-[6.5rem] sm:pt-16">
           <h1 className="sr-only">KHANIT INK</h1>
-          <img src={LOGO} alt="Khanit Ink koi logo" className="absolute inset-0 h-full w-full object-cover object-center" />
+          <img src={LOGO} alt="Khanit Ink koi logo" className="mx-auto h-auto w-full max-h-[88svh] object-contain object-center" />
         </section>
         <section className="border-y border-white/10 bg-black px-5 py-6">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4">
@@ -27,17 +27,17 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="work" className="mx-auto max-w-6xl px-5 py-24">
-          <div className="mb-12 flex items-end justify-between gap-6">
+        <section id="work" className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+          <div className="mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-[11px] uppercase tracking-[0.4em] text-gold">{t.latest[lang]}</p>
-              <h2 className="mt-2 font-display text-4xl tracking-[0.12em] sm:text-5xl">{t.theWork[lang]}</h2>
+              <h2 className="mt-2 font-display text-3xl tracking-[0.12em] sm:text-5xl">{t.theWork[lang]}</h2>
             </div>
             <Link href="/gallery" className="text-xs uppercase tracking-[0.22em] text-gold hover:underline">{t.fullGallery[lang]}</Link>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {gallery.filter((p) => !p.src.includes("sun-spiral")).slice(0, 6).map((p) => (
-              <figure key={p.src} className="plate group overflow-hidden">
+            {gallery.slice(0, 6).map((p) => (
+              <figure key={p.src} className="plate overflow-hidden">
                 <div className="aspect-[3/4] overflow-hidden">
                   <img src={p.src} alt={p.title} className="h-full w-full object-cover" />
                 </div>
@@ -52,20 +52,20 @@ export default function Home() {
         <section id="studio" className="border-y border-white/10 bg-black/40">
           <div className="mx-auto grid max-w-6xl items-center lg:grid-cols-2">
             <img src="/api/asset?p=work/studio-session.jpg" alt="" className="h-full max-h-[760px] w-full object-cover" />
-            <div className="px-6 py-16 lg:px-14">
+            <div className="px-5 py-12 sm:px-6 lg:px-14 lg:py-16">
               <p className="text-[11px] uppercase tracking-[0.4em] text-gold">{t.studioEyebrow[lang]}</p>
-              <h2 className="mt-3 font-display text-4xl tracking-[0.1em] sm:text-5xl">{t.studioH[lang]}</h2>
-              <p className="mt-6 font-body text-xl leading-relaxed text-white/70">{t.studioP[lang]}</p>
+              <h2 className="mt-3 font-display text-3xl tracking-[0.1em] sm:text-5xl">{t.studioH[lang]}</h2>
+              <p className="mt-6 font-body text-lg leading-relaxed text-white/70 sm:text-xl">{t.studioP[lang]}</p>
             </div>
           </div>
         </section>
-        <section id="aftercare" className="mx-auto max-w-6xl px-5 py-24">
+        <section id="aftercare" className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
           <p className="text-[11px] uppercase tracking-[0.4em] text-gold">{t.navAftercare[lang]}</p>
-          <h2 className="mt-3 font-display text-4xl tracking-[0.1em]">{t.afterH[lang]}</h2>
+          <h2 className="mt-3 font-display text-3xl tracking-[0.1em] sm:text-4xl">{t.afterH[lang]}</h2>
           <div className="mt-10 grid items-center gap-10 lg:grid-cols-2">
             <img src="/api/asset?p=aftercare.jpg" alt="" className="w-full border border-gold/20 object-cover" />
             <div>
-              <ol className="space-y-4 font-body text-xl text-white/70">
+              <ol className="space-y-4 font-body text-lg text-white/70 sm:text-xl">
                 <li>{t.a1[lang]}</li>
                 <li>{t.a2[lang]}</li>
                 <li>{t.a3[lang]}</li>
@@ -77,8 +77,8 @@ export default function Home() {
         </section>
         <StudioMap />
         <section className="px-5 pb-24">
-          <div className="mx-auto max-w-6xl border border-gold/30 bg-gradient-to-br from-gold/10 to-transparent px-8 py-16 text-center">
-            <p className="font-display text-3xl tracking-[0.16em] text-goldsoft sm:text-5xl">{t.canvas[lang]}</p>
+          <div className="mx-auto max-w-6xl border border-gold/30 px-5 py-12 text-center sm:px-8 sm:py-16">
+            <p className="font-display text-2xl tracking-[0.12em] text-goldsoft sm:text-5xl sm:tracking-[0.16em]">{t.canvas[lang]}</p>
             <Link href="/book" className="btn-gold mt-8 inline-block px-10 py-3 text-xs font-semibold uppercase tracking-[0.24em]">{t.request[lang]}</Link>
           </div>
         </section>
