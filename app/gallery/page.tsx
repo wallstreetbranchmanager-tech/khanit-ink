@@ -1,14 +1,15 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { plates } from "@/lib/plates";
 const gallery = [
-  { src: "/work/veil-rose-skull.jpg", title: "Veil, Rose & Skull", tag: "Black & grey" },
-  { src: "/work/black-snake.jpg", title: "Scale Snake", tag: "Blackwork" },
-  { src: "/work/oni-sleeve.jpg", title: "Oni Sleeve (line)", tag: "Japanese" },
-  { src: "/work/candle.jpg", title: "Melting Candle", tag: "Blackwork" },
-  { src: "/work/sun-spiral.jpg", title: "Spiral Sun", tag: "Bold line" },
-  { src: "/work/sakura-leg.jpg", title: "Sakura Current", tag: "Fine line" },
-  { src: "/work/red-ink-butterflies.jpg", title: "Red Ink Flight", tag: "Red fine-line" },
-  { src: "/work/studio-session.jpg", title: "Session", tag: "Studio" },
+  { src: plates.veil_rose_skull, title: "Veil, Rose & Skull", tag: "Black & grey" },
+  { src: plates.black_snake, title: "Scale Snake", tag: "Blackwork" },
+  { src: plates.oni_sleeve, title: "Oni Sleeve (line)", tag: "Japanese" },
+  { src: plates.candle, title: "Melting Candle", tag: "Blackwork" },
+  { src: plates.sun_spiral, title: "Spiral Sun", tag: "Bold line" },
+  { src: plates.sakura_leg, title: "Sakura Current", tag: "Fine line" },
+  { src: plates.red_ink_butterflies, title: "Red Ink Flight", tag: "Red fine-line" },
+  { src: plates.studio_session, title: "Session", tag: "Studio" },
 ];
 
 export default function GalleryPage() {
@@ -24,7 +25,7 @@ export default function GalleryPage() {
           </p>
           <div className="mt-14 columns-1 gap-5 sm:columns-2 lg:columns-3">
             {gallery.map((p) => (
-              <figure key={p.src} className="mb-5 break-inside-avoid border border-white/10 bg-black">
+              <figure key={p.title} className="mb-5 break-inside-avoid border border-white/10 bg-black">
                 <img src={p.src} alt={p.title} className="w-full object-cover" />
                 <figcaption className="px-4 py-3">
                   <p className="font-display text-sm tracking-[0.14em]">{p.title}</p>
