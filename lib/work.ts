@@ -1,2 +1,14 @@
-import { item as veil } from "./p_veil";
-export const works = [veil] as const;
+export const ADDRESS_TH = "66 หมู่ 11 ต.บ้านม่วง อ.บ้านดุง จ.อุดรธานี 41190";
+export const ADDRESS_EN = "66 Moo 11, Ban Muang, Ban Dung, Udon Thani 41190";
+export const MAPS_Q = "66+Moo+11+Ban+Muang+Ban+Dung+Udon+Thani+41190";
+
+export const works = [
+  { src: "/assets/work/veil-rose-skull.jpg", title: "Veil, Rose & Skull", tag: "Black & grey · forearm" },
+  { src: "/assets/work/black-snake.jpg", title: "Scale Snake", tag: "Blackwork · inner arm" },
+  { src: "/assets/work/oni-sleeve.jpg", title: "Oni Sleeve (line)", tag: "Japanese · upper arm" },
+  { src: "/assets/work/candle.jpg", title: "Melting Candle", tag: "Blackwork · arm" },
+  { src: "/assets/work/sun-spiral.jpg", title: "Spiral Sun", tag: "Bold line · elbow" },
+  { src: "/assets/work/sakura-leg.jpg", title: "Sakura Current", tag: "Fine line · lower leg" },
+  { src: "/assets/work/red-ink-butterflies.jpg", title: "Red Ink Flight", tag: "Red fine-line" },
+  { src: "/assets/work/studio-session.jpg", title: "In the chair", tag: "Studio · Ban Dung" },
+] as const;
