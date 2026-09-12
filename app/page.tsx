@@ -14,9 +14,13 @@ export default function Home() {
     <>
       <Nav />
       <main>
-        <section className="relative bg-black pt-[6.5rem] sm:pt-16">
+        <section className="relative bg-black px-6 pt-[6.75rem] sm:px-8 sm:pt-20">
           <h1 className="sr-only">KHANIT INK</h1>
-          <img src={LOGO} alt="Khanit Ink koi logo" className="mx-auto h-auto w-full max-h-[88svh] object-contain object-center" />
+          <img
+            src={LOGO}
+            alt="Khanit Ink koi logo"
+            className="mx-auto h-auto w-full max-w-[18rem] object-contain sm:max-w-[24rem] lg:max-w-[28rem]"
+          />
         </section>
         <section className="border-y border-white/10 bg-black px-5 py-6">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4">
